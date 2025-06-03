@@ -139,6 +139,12 @@ export default function JyutpingPractice() {
             const parsed = parseJyutpingInput(e.target.value.trim().toLowerCase());
             setInputs(parsed);
           }}
+          onKeyDown={e => {
+            if (e.key === 'Enter' && isReady) {
+              handleSubmit();
+              setResetKeyboards(true);
+            }
+          }}
           placeholder="e.g. ngo5"
           autoComplete="off"
         />
