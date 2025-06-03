@@ -6,11 +6,10 @@
   "homepage": "https://kacok007.github.io/jyutping-typing",
   "scripts": {
     "dev": "vite",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
