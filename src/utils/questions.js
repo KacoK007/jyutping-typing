@@ -1,9 +1,10 @@
-// constants.js
-import CHARLIST from './data/charlist.json';
-import CHARCOUNT from './data/charcount.json';
+import CHARLIST from '../data/charlist.json';
+import CHARCOUNT from '../data/charcount.json';
 
 for (const char of Object.keys(CHARCOUNT)) {
   const charCode = char.charCodeAt(0);
+    // Check if the character is a CJK character
+    // CJK characters are in the ranges:
     const isCJK = (0x3400 <= charCode && charCode <= 0x4DBF) ||
                   (0x4E00 <= charCode && charCode <= 0x9FFF) ||
                   (0xF900 <= charCode && charCode <= 0xFAFF) ||
@@ -47,26 +48,18 @@ export function getCharJyutpingSortedByFrequency() {
   return arr;
 }
 
-const characterQuestions = getCharJyutpingSortedByFrequency().map(item => ({
+export function getWeightedShuffledQuestions() {
+  const arr = getCharJyutpingSortedByFrequency();
+  return arr
+    .map(item => ({
+      ...item,
+      sortKey: item.freq + Math.random() * item.freq * 0.6 
+    }))
+    .sort((a, b) => b.sortKey - a.sortKey);
+}
+export const questions = getWeightedShuffledQuestions().map(item => ({
   char: item.char,
   jyutpings: item.jyutpings
 }));
 
-export const initials = ["b", "p", "m", "f", "d", "t", "n", "l", "g", "k", "ng", "h", "gw", "kw", "w", "z", "c", "s", "j"];
-
-export const finalsByGroup ={
-      aa: ["aa", "aai", "aau", "aam", "aan", "aang", "aap", "aat", "aak"],
-      a: ["a", "ai", "au", "am", "an", "ang", "ap", "at", "ak"],
-      e: ["e", "ei", "en", "eu", "em", "eng", "ep", "et", "ek"],
-      i: ["i", "iu", "im", "in", "ip", "it", "ing", "ik"],
-      o: ["o", "ou", "oi", "on", "ong", "ot", "ok"],
-      oe: ["oe", "oeng", "oet", "oek"],
-      eo: ["eoi", "eon", "eong", "eot"],
-      u: ["u", "ui", "un", "ut", "um", "ung", "up", "uk"],
-      yu: ["yu", "yun", "yung", "yut"],
-      鼻音: ["m", "ng"],
-    }
-
-export const tones = ["1", "2", "3", "4", "5", "6"];
-
-export const questions = [...characterQuestions];
+console.log("jyutpings", jyutpings);
