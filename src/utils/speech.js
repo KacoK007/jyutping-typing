@@ -1,6 +1,7 @@
 export function speak(text) {
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = "zh-HK";
-  utterance.rate = 0.85;
+  utterance.pitch = 0.8;
+  utterance.rate = 0.70;
   window.speechSynthesis.speak(utterance);
 }
