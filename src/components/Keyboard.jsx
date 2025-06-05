@@ -71,7 +71,7 @@ const Keyboard = ({
             {keyboardData.initial.map(initial => (
               <Key
                 key={initial}
-                label={initial || "(none)"}
+                label={initial || "∅"}
                 selected={selectedInitial === initial}
                 onClick={() => handleInitialSelect(initial)}
                 type="initial"
