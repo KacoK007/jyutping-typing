@@ -2,10 +2,9 @@ import { useState , useEffect} from 'react';
 import Key from './Key';
 import { initials, finalsByGroup, tones, initial_pronunciations, final_pronunciations} from '../utils/constants';
 
-const audioBase = "./src/audio/"
 
 function playAudio(file) {
-  const audio = new Audio(`${audioBase}${file}`);
+  const audio = new Audio(`${import.meta.env.BASE_URL}audio/${file}`);
   audio.play();
 }
 
