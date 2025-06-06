@@ -5,6 +5,7 @@ import CharacterDisplay from './components/CharacterDisplay';
 import JyutpingInput from './components/JyutpingInput';
 import HelpModal from './components/HelpModal';
 import InfoModal from './components/InfoModal';
+import Pronunciation from './components/Pronunication';
 import { questions } from './utils/questions';
 import { parseJyutpingInput } from './utils/jyutping';
 
@@ -12,6 +13,7 @@ export default function JyutpingPractice() {
   const [current, setCurrent] = useState(0);
   const [inputs, setInputs] = useState({ initial: '', final: '', tone: '' });
   const [feedback, setFeedback] = useState({ message: '', isCorrect: null });
+  const [pronunciationMode, setPronunciationMode] = useState(false);
   const [score, setScore] = useState({ correct: 0, total: 0 });
   const [resetKeyboards, setResetKeyboards] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
@@ -113,7 +115,9 @@ export default function JyutpingPractice() {
       </div>
 
       <Feedback score={score} feedback={feedback} />
+      
       <CharacterDisplay question={question} />
+
       <JyutpingInput
         userInput={userInput}
         inputs={inputs}
@@ -123,6 +127,11 @@ export default function JyutpingPractice() {
         setResetKeyboards={setResetKeyboards}
       />
 
+      <Pronunciation
+        pronunciationMode={pronunciationMode}
+        setPronunciationMode={setPronunciationMode}
+      />
+
       <Keyboard
         type="syllable"
         initialValue={inputs.initial}
@@ -130,11 +139,13 @@ export default function JyutpingPractice() {
         onInitialChange={(initial) => setInputs(prev => ({ ...prev, initial }))}
         onFinalChange={(final) => setInputs(prev => ({ ...prev, final }))}
         reset={resetKeyboards}
+        pronunciationMode={pronunciationMode}
       />
       <Keyboard
         type="tone"
         onToneChange={(tone) => setInputs(prev => ({ ...prev, tone }))}
         reset={resetKeyboards}
+        pronunciationMode={pronunciationMode}
       />
 
       <button

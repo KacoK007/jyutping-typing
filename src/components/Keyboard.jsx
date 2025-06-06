@@ -1,5 +1,13 @@
 import { useState , useEffect} from 'react';
 import Key from './Key';
+import { initials, finalsByGroup, tones, initial_pronunciations, final_pronunciations} from '../utils/constants';
+
+const audioBase = "src/audio/"
+
+function playAudio(file) {
+  const audio = new Audio(`${audioBase}${file}`);
+  audio.play();
+}
 
 const Keyboard = ({ 
   type,
@@ -8,7 +16,8 @@ const Keyboard = ({
   onInitialChange,
   onFinalChange,
   onToneChange,
-  reset
+  reset,
+  pronunciationMode = false
 }) => {
   const [selectedInitial, setSelectedInitial] = useState(initialValue);
   const [selectedFinal, setSelectedFinal] = useState(finalValue);
@@ -17,28 +26,29 @@ const Keyboard = ({
 
 
   const keyboardData = {
-    initial: ["", "b", "p", "m", "f", "d", "t", "n", "l", "g", "k", "ng", "h", "gw", "kw", "w", "z", "c", "s", "j"],
-    final: {
-      aa: ["aa", "aai", "aau", "aam", "aan", "aang", "aap", "aat", "aak"],
-      a: ["a", "ai", "au", "am", "an", "ang", "ap", "at", "ak"],
-      e: ["e", "ei", "en", "eu", "em", "eng", "ep", "et", "ek"],
-      i: ["i", "iu", "im", "in", "ip", "it", "ing", "ik"],
-      o: ["o", "ou", "oi", "on", "ong", "ot", "ok"],
-      oe: ["oe", "oeng", "oet", "oek"],
-      eo: ["eoi", "eon", "eong", "eot"],
-      u: ["u", "ui", "un", "ut", "um", "ung", "up", "uk"],
-      yu: ["yu", "yun", "yung", "yut"],
-      鼻音: ["m", "ng"],
-    },
-    tone: ["", "1", "2", "3", "4", "5", "6"]
+    initial: initials,
+    final: finalsByGroup,
+    tone: tones
   };
 
   const handleInitialSelect = (initial) => {
+    if (pronunciationMode) {
+      const pronunciation = initial_pronunciations[initial];
+      if (pronunciation) {
+        playAudio(`${pronunciation}.mp3`);
+      }
+    }
     setSelectedInitial(initial);
     onInitialChange(initial);
   };
 
   const handleFinalSelect = (final) => {
+    if (pronunciationMode) {
+      const pronunciation = final_pronunciations[final];
+      if (pronunciation) {
+        playAudio(`${pronunciation}.mp3`);
+      }
+    }
     setSelectedFinal(final);
     onFinalChange(final);
   };
@@ -51,7 +61,7 @@ const Keyboard = ({
   const handleGroupChange = (group) => {
     setFinalGroup(group);
   };
-  
+
   useEffect(() => {
     if (reset) {
       setSelectedInitial('');

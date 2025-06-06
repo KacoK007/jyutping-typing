@@ -14,7 +14,7 @@ https://kacok007.github.io/jyutping-typing/
 
 ## To-do
 - Add word list for practice
-- Add pronunication for each inital and final (if available)
+- ~~Add pronunication for each inital and final (if available)~~
 - Allow users to paste paragraphs for Jyutping typing practice.
 
 ## Getting Started
@@ -45,7 +45,8 @@ https://kacok007.github.io/jyutping-typing/
 ## Acknowledgments
 
 - The character list and character frequency list are from 粵典 words.hk
-- The mapping of intials and finals are from LukHap 六合.
+- The mapping table of intials and finals are from LukHap 六合.
+- The examples of pronunication is prased from https://jyutping.org/jyutping/.
 
 ## Disclaimer
 - I am not familiar with jyutping, that is why I make this. Therefore, there could be mistakes and problems.
