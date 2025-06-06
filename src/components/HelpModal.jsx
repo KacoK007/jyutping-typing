@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function HelpModal({ showHelp, setShowHelp }) {
   if (!showHelp) return null;

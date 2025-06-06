@@ -7,9 +7,9 @@ export const finalsByGroup ={
       i: ["i", "iu", "im", "in", "ip", "it", "ing", "ik"],
       o: ["o", "ou", "oi", "on", "ong", "ot", "ok"],
       oe: ["oe", "oeng", "oet", "oek"],
-      eo: ["eoi", "eon", "eong", "eot"],
+      eo: ["eoi", "eon", "eot"],
       u: ["u", "ui", "un", "ut", "um", "ung", "up", "uk"],
-      yu: ["yu", "yun", "yung", "yut"],
+      yu: ["yu", "yun", "yut"],
       鼻音: ["m", "ng"],
     }
 

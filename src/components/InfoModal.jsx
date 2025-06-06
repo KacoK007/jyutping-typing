@@ -1,4 +1,3 @@
-import React from 'react';
 
 export default function InfoModal({ showInfo, setShowInfo }) {
   if (!showInfo) return null;

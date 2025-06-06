@@ -1,11 +1,17 @@
 import { useState , useEffect} from 'react';
 import Key from './Key';
-import { initials, finalsByGroup, tones, initial_pronunciations, final_pronunciations} from '../utils/constants';
+import { initials, finalsByGroup, tones} from '../utils/constants';
 
 
 function playAudio(file) {
-  const audio = new Audio(`${import.meta.env.BASE_URL}audio/${file}`);
-  audio.play();
+  try {
+    const audio = new Audio(`${import.meta.env.BASE_URL}audio/${file}`);
+    audio.play().catch((err) => {
+      console.error('Audio play failed:', err);
+    });
+  } catch (err) {
+    console.error('Audio error:', err);
+  }
 }
 
 const Keyboard = ({ 
@@ -32,7 +38,7 @@ const Keyboard = ({
 
   const handleInitialSelect = (initial) => {
     if (pronunciationMode) {
-      const pronunciation = initial_pronunciations[initial];
+      const pronunciation = `initial-${initial}`;
       if (pronunciation) {
         playAudio(`${pronunciation}.mp3`);
       }
@@ -43,7 +49,7 @@ const Keyboard = ({
 
   const handleFinalSelect = (final) => {
     if (pronunciationMode) {
-      const pronunciation = final_pronunciations[final];
+      const pronunciation = `final-${final}`;
       if (pronunciation) {
         playAudio(`${pronunciation}.mp3`);
       }
@@ -53,6 +59,12 @@ const Keyboard = ({
   };
 
   const handleToneSelect = (tone) => {
+    if (pronunciationMode) {
+      const pronunciation = `tone-0${tone}`;
+      if (pronunciation) {
+        playAudio(`${pronunciation}.mp3`);
+      }
+    }
     setSelectedTone(tone);
     onToneChange(tone);
   };

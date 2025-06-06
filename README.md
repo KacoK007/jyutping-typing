@@ -46,7 +46,7 @@ https://kacok007.github.io/jyutping-typing/
 
 - The character list and character frequency list are from 粵典 words.hk
 - The mapping table of intials and finals are from LukHap 六合.
-- The examples of pronunication is prased from https://jyutping.org/jyutping/.
+- The examples of pronunication is prased from https://opencantonese.org/books/cantonese-life-1/pronunciation-guide/jyutping-chart.
 
 ## Disclaimer
 - I am not familiar with jyutping, that is why I make this. Therefore, there could be mistakes and problems.

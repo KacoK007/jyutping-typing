@@ -1,4 +1,3 @@
-import React from 'react';
 import { parseJyutpingInput } from '../utils/jyutping';
 
 export default function JyutpingInput({ userInput, inputs, setInputs, isReady, handleSubmit, setResetKeyboards }) {

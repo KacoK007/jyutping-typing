@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { speak } from '../utils/speech';
 
 export default function CharacterDisplay({ question }) {

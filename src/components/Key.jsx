@@ -1,5 +1,4 @@
-// components/Key.jsx
-import React from "react";
+
 
 const Key = ({ label, selected, onClick, type }) => {
   const bgColors = {
