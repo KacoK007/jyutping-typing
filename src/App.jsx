@@ -85,12 +85,11 @@ export default function JyutpingPractice() {
       <HelpModal showHelp={showHelp} setShowHelp={setShowHelp} />
       <InfoModal showInfo={showInfo} setShowInfo={setShowInfo} />
       
-      <h1 className="text-2xl font-bold mb-6 text-center">Jyutping Practice</h1>
-      
-      <div className="text-center mb-4 text-gray-600 flex justify-center gap-10">
+      <div className="text-center mb-4 text-gray-800 flex justify-center gap-10">
+        
         <button
           type="button"
-          className="flex items-center gap-2 px-3 py-2 rounded bg-blue-100 hover:bg-blue-200 text-blue-800 font-bold"
+          className="flex items-center gap-2 px-3 py-2 rounded hover:bg-gray-100 text-blue-600 font-bold"
           onClick={() => setShowHelp(true)}
         >
           <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
@@ -98,11 +97,13 @@ export default function JyutpingPractice() {
             <path d="M0 0h24v24H0V0z" fill="none"></path>
             <path d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path>
           </svg>
-          Help
         </button>
+
+        <h1 className="text-2xl font-bold text-center">Jyutping Practice</h1>
+
         <button
           type="button"
-          className="flex items-center gap-2 px-3 py-2 rounded bg-blue-100 hover:bg-blue-200 text-blue-800 font-bold"
+          className="flex items-center gap-2 px-3 py-2 rounded hover:bg-gray-100 text-blue-600 font-bold"
           onClick={() => setShowInfo(true)}
         >
           <svg viewBox="0 0 24 24" className="w-6 h-6 fill-current">
@@ -110,7 +111,6 @@ export default function JyutpingPractice() {
             <path d="M0 0h24v24H0V0z" fill="none"></path>
             <path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"></path>
           </svg>
-          Info
         </button>
       </div>
 

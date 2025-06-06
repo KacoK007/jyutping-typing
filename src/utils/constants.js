@@ -1,4 +1,4 @@
-export const initials = ["b", "p", "m", "f", "d", "t", "n", "l", "g", "k", "ng", "h", "gw", "kw", "w", "z", "c", "s", "j"];
+export const initials = ["","b", "p", "m", "f", "d", "t", "n", "l", "g", "k", "ng", "h", "gw", "kw", "w", "z", "c", "s", "j"];
 
 export const finalsByGroup ={
       aa: ["aa", "aai", "aau", "aam", "aan", "aang", "aap", "aat", "aak"],
@@ -13,7 +13,7 @@ export const finalsByGroup ={
       鼻音: ["m", "ng"],
     }
 
-export const tones = ["1", "2", "3", "4", "5", "6"];
+export const tones = ["","1", "2", "3", "4", "5", "6"];
 
 export const initial_pronunciations = {
   b: "baa1",
