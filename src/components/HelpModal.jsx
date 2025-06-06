@@ -16,7 +16,7 @@ export default function HelpModal({ showHelp, setShowHelp }) {
           <li>Type the Jyutping romanization for the given Cantonese character or word.</li>
           <li>You can use the on-screen keyboard or type directly in the input box.</li>
           <li>Include the tone number at the end (e.g. <span className="font-mono">ngo5</span>).</li>
-          <li>Press <b>Pronunication Mode</b> to listen examples</li>
+          <li>Press <b>Pronunication Mode</b> to listen examples.</li>
           <li>Press <b>Submit</b> or hit <b>Enter</b> to check your answer.</li>
           <li>Feedback will show which parts (initial, final, tone) are correct or incorrect.</li>
           <li>Click <b>Next Question</b> to continue.</li>
